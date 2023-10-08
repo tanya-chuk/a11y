@@ -34,5 +34,27 @@ window.addEventListener("DOMContentLoaded", () => {
         title.setAttribute('aria-expanded', 'false');   
       }
     });    
-  });  
+  });
+
+  const modalTarget = document.querySelectorAll('.modal-target');
+  modalTarget.forEach((modalTarget)=> {
+    modalTarget.addEventListener('click', ()=>{
+      const modalWindow = document.querySelector('.modal');
+      showModal(modalWindow);
+    });
+  });
+  const modalBackdrop = document.querySelectorAll('.modal-backdrop');
+  modalBackdrop.forEach((modalBackdrop)=> {
+    modalBackdrop.addEventListener('click', (e) => {
+
+      const modalWindow = e.target.closest('.modal');
+      modalWindow.classList.remove('show-modal');
+    });
+  });
+
+  const showModal = (modalWindow) => {
+    modalWindow.classList.add('show-modal');
+  }
+
+
 })
