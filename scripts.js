@@ -142,4 +142,17 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+  const skipLinkElement = document.querySelector('.skiplink');
+  const skipLinkTargetElement = document.querySelector('#skipLinkTarget');
+
+  const handleFocusOnSkipLink = () => {
+    skipLinkTargetElement.focus();
+  }
+
+  skipLinkElement.addEventListener('click', () => handleFocusOnSkipLink());
+  skipLinkElement.addEventListener('keydown', (e) => {
+    if (e.key = 'Enter') {
+      handleFocusOnSkipLink()
+    }
+  })
 })
