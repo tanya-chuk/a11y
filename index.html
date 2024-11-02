@@ -79,66 +79,35 @@
 										<p>Size Guide</p>
 										<span class="visually-hidden">Will open a modal window</span>
 									</a>
-									<div class="modal">
-										<div class="modal-backdrop">
-											<div class="modal-body size-guide">
-												<h2 class="heading-2">Size guide</h2>
-												<p>Some description about the sizes</p>
-												<table class="size-guide__table">
-													<tr>
-														<td>EU</td>
-														<td>US</td>
-													</tr>
-													<tr>
-														<td>36</td>
-														<td>8</td>
-													</tr>
-													<tr>
-														<td>38</td>
-														<td>9</td>
-													</tr>
-													<tr>
-														<td>40</td>
-														<td>10</td>
-													</tr>
-													<tr>
-														<td>42</td>
-														<td>11</td>
-													</tr>
-												</table>
-											</div>
-										</div>
-
-									</div>
 								</div>
 								<fieldset class="product-card__parameter">
 									<legend class="product-card__label">Color<span aria-hidden="true"> - <span id="productColorValue">White</span></span></legend>
-									<ul class="input-group" aria-label="color menu">
-										<li class="input-group__item">
+									<ul id="color-input-group" class="input-group" aria-label="color menu" role="radiogroup">
+										<li class="input-group__item" role="radio" tabindex="0" aria-checked="true">
 											<label for="white" class="input-radio">
-												<input id="white" class="input-radio__input" type="radio" name="product_color" data-name-display="White" value="white" checked aria-label="white">
-												<span class="input-radio__visual input-radio-color">
+												<input id="white" class="input-radio__input" type="radio" name="product_color" data-name-display="White" value="white" checked aria-label="white" tabindex="-1">
+												<span class="input-radio__visual input-radio-color" >
 													<span class="input-radio-color__sample" style="background-color: #ffffff; border: 1px #cccccc solid;"></span>
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item">
+										<li class="input-group__item" role="radio" tabindex="-1">
 											<label for="black" class="input-radio">
-												<input id="black" class="input-radio__input" type="radio" name="product_color" data-name-display="Black" value="black" aria-label="black">
+												<input id="black" class="input-radio__input" type="radio" name="product_color" data-name-display="Black" value="black" aria-label="black" tabindex="-1">
 												<span class="input-radio__visual input-radio-color">
 													<span class="input-radio-color__sample" style="background-color: #1a1f29;"></span>
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item">
+										<li class="input-group__item" role="radio" tabindex="-1">
 											<label for="grey" class="input-radio">
-												<input id="grey" class="input-radio__input" type="radio" name="product_color" data-name-display="Gray" value="gray" aria-label="grey">
+												<input id="grey" class="input-radio__input" type="radio" name="product_color" data-name-display="Gray" value="gray" aria-label="grey" tabindex="-1">
 												<span class="input-radio__visual input-radio-color">
 													<span class="input-radio-color__sample" style="background-color: #aeaeb0;"></span>
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item">
+										<li class="input-group__item" role="radio" tabindex="-1">
 											<label for="purple" class="input-radio">
 												<input id="purple" class="input-radio__input" type="radio" name="product_color" data-name-display="Purple latte" value="purple" aria-label="purple">
 												<span class="input-radio__visual input-radio-color">
@@ -146,7 +115,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item">
+										<li class="input-group__item" role="radio" aria-disabled="true">
 											<label for="red" class="input-radio">
 												<input id="red" class="input-radio__input" type="radio" name="product_color" data-name-display="Color 1" value="color1" disabled aria-label="red">
 												<span class="input-radio__visual input-radio-color">
@@ -154,7 +123,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item">
+										<li class="input-group__item" role="radio" aria-disabled="true">
 											<label for="orange" class="input-radio">
 												<input id="orange" class="input-radio__input" type="radio" name="product_color" data-name-display="Color 2" value="color2" disabled aria-label="orange">
 												<span class="input-radio__visual input-radio-color">
@@ -225,20 +194,20 @@
 								<h3 class="products-grid__item-name"><a href="#">Product name</a></h3>
 								<ul class="colors-palette products-grid__item-colors-palette" aria-label="Colors palette">
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+										</span>
 									</li>
 								</ul>
 								<p class="products-grid__item-price">
@@ -252,16 +221,16 @@
 								<h3 class="products-grid__item-name"><a href="#">Very long product name for testing purposes</a></h3>
 								<ul class="colors-palette products-grid__item-colors-palette" aria-label="Colors palette">
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: red;" aria-label="red">
-										</a>
+										<span class="colors-palette__sample" style="background-color: red;" aria-label="red">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: green;" aria-label="green">
-										</a>
+										<span class="colors-palette__sample" style="background-color: green;" aria-label="green">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: blue;" aria-label="blue">
-										</a>
+										<span class="colors-palette__sample" style="background-color: blue;" aria-label="blue">
+										</span>
 									</li>
 								</ul>
 								<p class="products-grid__item-price">
@@ -278,20 +247,20 @@
 								<h3 class="products-grid__item-name"><a href="#">Product name</a></h3>
 								<ul class="colors-palette products-grid__item-colors-palette" aria-label="Colors palette">
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+										</span>
 									</li>
 									<li class="colors-palette__item">
-										<a href="#" class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
-										</a>
+										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+										</span>
 									</li>
 								</ul>
 								<p class="products-grid__item-price">
@@ -393,6 +362,36 @@
 					<small class="footer__copyright">© Susparsa 2021</small>
 				</div>
 			</footer>
+		</div>
+		<div class="modal" role="dialog" aria-labelledby="sizeDialogTitle">
+			<div class="modal-backdrop" >
+				<div class="modal-body size-guide" tabindex="0">
+					<h2 id='sizeDialogTitle' class="heading-2">Size guide</h2>
+					<p>Some description about the sizes</p>
+					<table class="size-guide__table" aria-label="Size guide table" tabindex="0">
+						<tr>
+							<th scope="col">EU</th>
+							<th scope="col">US</th>
+						</tr>
+						<tr>
+							<td>36</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>38</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>40</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>42</td>
+							<td>11</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 		<script src="scripts.js"></script>
 	</body>

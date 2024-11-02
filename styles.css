@@ -37,7 +37,6 @@
 
 a {
   text-decoration: none;
-  outline: none;
 }
 
 p {
@@ -84,7 +83,6 @@ button {
   background: none;
   padding: 0;
   margin: 0;
-  outline: none;
 }
 
 button {
@@ -153,6 +151,11 @@ fieldset legend {
 
 .btn_primary:hover {
   background-color: #292fad;
+}
+
+.btn_primary:focus {
+  outline: 2px solid palevioletred;
+  border-radius: 2px;
 }
 
 .btn_secondary {
@@ -569,7 +572,6 @@ fieldset legend {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
-  outline: none;
 }
 
 .product-card__left {
@@ -751,16 +753,15 @@ fieldset legend {
   display: block;
 }
 
-.size-guide__table tr:first-child td {
+.size-guide__table tr:first-child td,
+.size-guide__table tr:first-child th {
   font-weight: bold;
 }
-
-.size-guide__table td {
+.size-guide__table td,
+.size-guide__table th {
   border: 1px solid;
   padding: 10px;
 }
-
-
 
 .product-card__infolabel {
   font-size: 16px;
