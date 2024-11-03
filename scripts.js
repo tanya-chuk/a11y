@@ -8,17 +8,24 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const inputsQuantity = document.querySelectorAll('.input-quantity');
+  const quantityLiveRegion = document.querySelector('#amount-live-region');
   inputsQuantity.forEach((input) => {
     const inputField = input.querySelector('.input-quantity__field');
     const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
     const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
     inputBtnIncrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      inputField.value = initialValue + 1; 
+      inputField.value = initialValue + 1;
+      quantityLiveRegion.innerHTML = `Quantity ${inputField.value}`;
     });
     inputBtnDecrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      if (initialValue > 1) inputField.value = initialValue - 1;
+      if (initialValue > 1) {
+        inputField.value = initialValue - 1;
+        quantityLiveRegion.innerHTML = `Quantity ${inputField.value}`;
+      } else {
+        quantityLiveRegion.innerHTML = `Minimum quantity selected ${inputField.value}`;
+      };
     });    
   });
 
@@ -38,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const modalTarget = document.querySelectorAll('.modal-target');
   const body = document.querySelector('body');
+  const modalLiveRegion = document.querySelector('#modal-live-region');
 
   modalTarget.forEach((modalTarget)=> {
     modalTarget.addEventListener('click', ()=>{
@@ -51,11 +59,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalBackdrop = document.querySelectorAll('.modal-backdrop');
   modalBackdrop.forEach((modalBackdrop)=> {
     modalBackdrop.addEventListener('click', (e) => {
+      modalLiveRegion.innerHTML = 'Modal window closed';
       const modalWindow = e.target.closest('.modal');
       closeModal(modalWindow);
     });
     modalBackdrop.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        modalLiveRegion.innerHTML = 'Modal window closed';
         const modalWindow = e.target.closest('.modal');
         closeModal(modalWindow);
       }
@@ -110,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!nextInput.disabled) {
       currentInput.removeAttribute('checked');
       nextInput.setAttribute('checked', '1');
-      currentListItem.removeAttribute('aria-checked');
+      currentListItem.setAttribute('aria-checked', 'false');
       nextListItem.setAttribute('aria-checked', 'true');
       currentSelectedIndex = nextSelectedIndex;
       currentSelectedInput = currentListItem;
@@ -154,5 +164,12 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.key = 'Enter') {
       handleFocusOnSkipLink()
     }
-  })
+  });
+
+  const subscriptionForm = document.querySelector('#subscription-form');
+  const subscriptionLiveRegion = document.querySelector('#subscription-live-region');
+  subscriptionForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    subscriptionLiveRegion.innerHTML = 'Subscription form has been sent successfully';
+  });
 })

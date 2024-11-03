@@ -91,7 +91,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item" role="radio" tabindex="-1">
+										<li class="input-group__item" role="radio" tabindex="-1" aria-checked="false">
 											<label for="black" class="input-radio">
 												<input id="black" class="input-radio__input" type="radio" name="product_color" data-name-display="Black" value="black" aria-label="black" tabindex="-1">
 												<span class="input-radio__visual input-radio-color">
@@ -99,7 +99,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item" role="radio" tabindex="-1">
+										<li class="input-group__item" role="radio" tabindex="-1" aria-checked="false">
 											<label for="grey" class="input-radio">
 												<input id="grey" class="input-radio__input" type="radio" name="product_color" data-name-display="Gray" value="gray" aria-label="grey" tabindex="-1">
 												<span class="input-radio__visual input-radio-color">
@@ -107,7 +107,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item" role="radio" tabindex="-1">
+										<li class="input-group__item" role="radio" tabindex="-1" aria-checked="false">
 											<label for="purple" class="input-radio">
 												<input id="purple" class="input-radio__input" type="radio" name="product_color" data-name-display="Purple latte" value="purple" aria-label="purple">
 												<span class="input-radio__visual input-radio-color">
@@ -115,7 +115,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item" role="radio" aria-disabled="true">
+										<li class="input-group__item" role="radio" aria-disabled="true" aria-checked="false">
 											<label for="red" class="input-radio">
 												<input id="red" class="input-radio__input" type="radio" name="product_color" data-name-display="Color 1" value="color1" disabled aria-label="red">
 												<span class="input-radio__visual input-radio-color">
@@ -123,7 +123,7 @@
 												</span>
 											</label>
 										</li>
-										<li class="input-group__item" role="radio" aria-disabled="true">
+										<li class="input-group__item" role="radio" aria-disabled="true" aria-checked="false">
 											<label for="orange" class="input-radio">
 												<input id="orange" class="input-radio__input" type="radio" name="product_color" data-name-display="Color 2" value="color2" disabled aria-label="orange">
 												<span class="input-radio__visual input-radio-color">
@@ -140,6 +140,7 @@
 										<input type="number" class="input-quantity__field" id="productQuantity" name="product_quantity" value="1" aria-label="Current amount">
 										<button type='button' class="input-quantity__btn" data-action="increase" aria-label="Increase quantity">&plus;</button>
 									</div>
+									<div id="amount-live-region" role="status" class="visually-hidden"></div>
 								</div>
 								<button type='button' class="btn btn_secondary btn_hollow">Add to cart</button>
 								<button type='button' class="btn btn_primary">Buy it now</button>
@@ -151,7 +152,7 @@
 							</section>
 						</div>						
 						<div class="product-card__left">
-							<div class="product-card__photo-big" href="#">
+							<div class="product-card__photo-big">
 								<img class="product-card__photo-big-picture" src="images/photo1.jpg" srcset="images/photo1_x2.jpg 2x" alt="White unisex t-shirt">
 							</div>
 							<div class="accordion">
@@ -283,20 +284,18 @@
 								<p>Geneva, Switzerland</p>
 								<ul class="social" aria-label="Our social accounts">
 									<li class="social__item">
-										<a class="social__link" href="#" target="_blank" title="Facebook" aria-label="Facebook">
+										<a class="social__link" href="#" target="_blank" title="Facebook" aria-label="Facebook, will open in a new window">
 											<svg class="social__logo" width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 												<path fill-rule="evenodd" clip-rule="evenodd" d="M9.02694 9.9817H6.42882V19.5H2.49245V9.9817H0.6203V6.63659H2.49245V4.47193C2.49245 2.92396 3.22776 0.5 6.46386 0.5L9.37967 0.512199V3.7592H7.26406C6.91704 3.7592 6.42908 3.93258 6.42908 4.671V6.63971H9.37084L9.02694 9.9817Z" fill="#5E626B"/>
 											</svg>
 										</a>
-										<span class="visually-hidden">Will open in a new window</span>
 									</li>							
 									<li class="social__item">
-										<a class="social__link" href="#" target="_blank" title="Instagram" aria-label="Instagram">
+										<a class="social__link" href="#" target="_blank" title="Instagram" aria-label="Instagram, will open in a new window">
 											<svg class="social__logo" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 												<path d="M14.7071 0.5C17.3502 0.5 19.5 2.65013 19.5 5.29293V14.7071C19.5 17.3502 17.3502 19.5 14.7071 19.5H5.29293C2.65013 19.5 0.5 17.3502 0.5 14.7071V5.29293C0.5 2.65013 2.65013 0.5 5.29293 0.5H14.7071ZM14.7071 2.56779H5.29293C3.7903 2.56779 2.56779 3.7903 2.56779 5.29293V14.7071C2.56779 16.2097 3.7903 17.4326 5.29293 17.4326H14.7071C16.2097 17.4326 17.4326 16.21 17.4326 14.7071V5.29293C17.4326 3.7903 16.21 2.56779 14.7071 2.56779ZM10 5.10678C12.6984 5.10678 14.8936 7.30195 14.8936 10C14.8936 12.698 12.698 14.8936 10 14.8936C7.30195 14.8936 5.10678 12.6984 5.10678 10C5.10678 7.30195 7.30195 5.10678 10 5.10678ZM10 7.17456C8.44247 7.17456 7.17421 8.44212 7.17421 9.99965C7.17421 11.5579 8.44247 12.8258 10 12.8258C11.5582 12.8258 12.8254 11.5579 12.8254 9.99965C12.8254 8.44247 11.5579 7.17456 10 7.17456ZM15.0509 3.80297C15.6892 3.80297 16.2086 4.32238 16.2086 4.96073C16.2086 5.59909 15.6892 6.1185 15.0509 6.1185C14.4122 6.1185 13.8928 5.59909 13.8928 4.96073C13.8928 4.32238 14.4122 3.80297 15.0509 3.80297Z" fill="#5E626B"/>
 											</svg>
 										</a>
-										<span class="visually-hidden">Will open in a new window</span>
 									</li>
 								</ul>
 							</div>
@@ -347,23 +346,24 @@
 						</section>
 						<section class="footer__col" aria-label="Subscription">
 							<h3 class="footer__heading">Subscribe</h3>
-							<form class="form" action="#">
-								<div class="form__input-group">
-									<input class="input" type="email" name="email" id="email" placeholder="Email" aria-label="Email" autocomplete="email">
-									<button type='submit' class="btn btn_primary">Subscribe</button>
-								</div>
+							<form id="subscription-form" class="form" action="#" aria-label="Subscription form">
 								<div class="form__input-group">
 									<input class="checkbox" type="checkbox" name="agree" id="agree">
 									<label for="agree">I agree to give you all my data</label>
 								</div>
+								<div class="form__input-group">
+									<input class="input" type="email" name="email" id="email" placeholder="Email" aria-label="Email" autocomplete="email">
+									<button type='submit' class="btn btn_primary">Subscribe</button>
+								</div>
 							</form>
+							<div id="subscription-live-region" role="status" class="visually-hidden"></div>
 						</section>
 					</div>
 					<small class="footer__copyright">© Susparsa 2021</small>
 				</div>
 			</footer>
 		</div>
-		<div class="modal" role="dialog" aria-labelledby="sizeDialogTitle">
+		<div class="modal" aria-modal="true" role="dialog" aria-labelledby="sizeDialogTitle">
 			<div class="modal-backdrop" >
 				<div class="modal-body size-guide" tabindex="0">
 					<h2 id='sizeDialogTitle' class="heading-2">Size guide</h2>
@@ -393,6 +393,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="modal-live-region" role="alert" class="visually-hidden"></div>
 		<script src="scripts.js"></script>
 	</body>
 </html>
