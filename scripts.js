@@ -46,11 +46,19 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalTarget = document.querySelectorAll('.modal-target');
   const body = document.querySelector('body');
   const modalLiveRegion = document.querySelector('#modal-live-region');
+  const modalCloseButton = document.querySelectorAll('.modal-close-button');
 
   modalTarget.forEach((modalTarget)=> {
     modalTarget.addEventListener('click', ()=>{
       const modalWindow = document.querySelector('.modal');
       showModal(modalWindow);
+    });
+  });
+
+  modalCloseButton.forEach((button)=> {
+    button.addEventListener('click', ()=>{
+      const modalWindow = document.querySelector('.modal');
+      closeModal(modalWindow);
     });
   });
 
