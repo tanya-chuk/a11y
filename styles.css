@@ -857,6 +857,11 @@ fieldset legend {
   z-index: 0;
 }
 
+.input-radio:focus-within {
+  outline: 1px rgb(0, 0, 238) solid;
+  border-radius: 2px;
+}
+
 .input-radio__visual {
   position: relative;
   width: 40px;

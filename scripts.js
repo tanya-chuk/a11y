@@ -103,63 +103,6 @@ window.addEventListener("DOMContentLoaded", () => {
     previousActiveElement.focus();
   }
 
-  const colorInputGroup = document.querySelector('#color-input-group');
-
-  const roveTabindex = (menu, index, inc) => {
-    let nextIndex = index + inc;
-
-    if (nextIndex < 0) {
-      nextIndex = menu.length - 1;
-    } else if (nextIndex >= menu.length) {
-      nextIndex = 0;
-    }
-
-    menu[index].setAttribute("tabindex", "-1");
-    menu[nextIndex].setAttribute("tabindex", "0");
-    menu[nextIndex].focus();
-  }
-
-  const selectItem = (currentSelectedIndex, nextSelectedIndex, menu, currentSelectedInput) => {
-    const currentListItem = menu[currentSelectedIndex];
-    const nextListItem = menu[nextSelectedIndex];
-    const currentInput = currentListItem.querySelector('input');
-    const nextInput = nextListItem.querySelector('input');
-
-    if (!nextInput.disabled) {
-      currentInput.removeAttribute('checked');
-      nextInput.setAttribute('checked', '1');
-      currentListItem.setAttribute('aria-checked', 'false');
-      nextListItem.setAttribute('aria-checked', 'true');
-      currentSelectedIndex = nextSelectedIndex;
-      currentSelectedInput = currentListItem;
-      formColorLabel.innerHTML = inputsColor[currentSelectedIndex].dataset.nameDisplay;
-    }
-  }
-
-  colorInputGroup.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Enter') {
-      const tabElements = colorInputGroup.querySelectorAll('li');
-      const menu = Array.from(tabElements)
-      const currentIndex = menu.indexOf(e.target);
-
-      let currentSelectedInput = menu.find(elem => elem.querySelector('input[checked]'));
-      let currentSelectedIndex = menu.indexOf(currentSelectedInput);
-
-      switch (e.key) {
-        case 'ArrowLeft':
-          roveTabindex(menu, currentIndex, -1);
-          break;
-        case 'ArrowRight':
-          roveTabindex(menu, currentIndex, 1);
-          break;
-        case 'Enter':
-          selectItem(currentSelectedIndex, currentIndex, menu, currentSelectedInput);
-        default:
-          return;
-      }
-    }
-  })
-
   const skipLinkElement = document.querySelector('.skiplink');
   const skipLinkTargetElement = document.querySelector('#skipLinkTarget');
 
